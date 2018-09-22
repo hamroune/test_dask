@@ -23,7 +23,7 @@ def compute_departure_timestamp(df):
 
 
 
-df = dd.read_csv('gs:///formation-clients/sample.csv.zip')
+df = dd.read_csv('gs:///formation-clients/sample.csv')
 df = df.persist()
 progress(df)
 
