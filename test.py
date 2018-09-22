@@ -25,7 +25,7 @@ def compute_departure_timestamp(df):
 
 df = dd.read_csv('gs:///formation-clients/C2SectionRobotSample.csv')
 df = df.persist()
-progress(df)
+print(df)
 
 
 
