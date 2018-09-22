@@ -5,7 +5,7 @@ import gcsfs
 # Create a cluster where each worker has two cores and eight GB of memory
 cluster = YarnCluster(environment='environnement.tar.gz',
                       worker_vcores=2,
-                      worker_memory="8GB")
+                      worker_memory="3GB")
 # Scale out to ten such workers
 cluster.scale(3)
 # Connect to the cluster
