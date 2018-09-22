@@ -29,4 +29,4 @@ progress(df)
 
 
 
-gcloud compute ssh hadoop-formation	-m --project=after-yesterday-217007 -- -L 1080:hadoop-formation	-m:8088 -N -n
+# gcloud compute ssh hadoop-formation	-m --project=after-yesterday-217007 -- -L 1080:hadoop-formation	-m:8088 -N -n
