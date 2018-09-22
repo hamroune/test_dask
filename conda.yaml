@@ -6,3 +6,6 @@ dependencies:
   - conda-pack
   - python=3.6
   - dask
+  - dask-yarn
+  - gcsfs
+  - pyarrow
