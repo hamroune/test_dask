@@ -7,23 +7,11 @@ cluster = YarnCluster(environment='environnement.tar.gz',
                       worker_vcores=2,
                       worker_memory="3GB")
 # Scale out to ten such workers
-cluster.scale(3)
+cluster.scale(2)
 # Connect to the cluster
 client = Client(cluster)
 
-
-def compute_departure_timestamp(df):
-    hours = df.CRSDepTime // 100
-    hours_timedelta = pd.to_timedelta(hours, unit='h')
-
-    minutes = df.CRSDepTime % 100
-    minutes_timedelta = pd.to_timedelta(minutes, unit='m')
-
-    return df.Date + hours_timedelta + minutes_timedelta
-
-
-
-df = dd.read_csv('gs:///formation-clients/C2SectionRobotSample.csv')
+df = dd.read_parquet('gs:///formation-clients/sample.parquet')
 df = df.persist()
 print(df)
 
