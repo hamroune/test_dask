@@ -11,7 +11,7 @@ cluster.scale(2)
 # Connect to the cluster
 client = Client(cluster)
 
-df = dd.read_parquet('gs:///formation-clients/sample.parquet', engine="pyarrow")
+df = dd.read_parquet('hdfs:///raw/sample.parquet', engine="pyarrow")
 df = df.persist()
 print(df)
 
